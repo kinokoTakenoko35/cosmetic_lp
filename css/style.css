@@ -25,7 +25,7 @@ section {
 }
 
 .hero-section {
-  background: url(/images/karly-jones-1.png);
+  background: url(../images/karly-jones-1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -172,7 +172,7 @@ header {
 footer {
   height: 30vh;
   background: #6f6565;
-  background-image: url(/images/LOGOLOGo.png);
+  background-image: url(../images/LOGOLOGo.png);
   background-repeat: no-repeat;
   background-position: center;
 }
