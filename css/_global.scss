@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+
+html {
+  font-family: "YuGothic";
+}
+
+body {
+  //background: rgb(100, 138, 125);
+}
+
+h3,
+h2,
+li > a {
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin: 0rem 12rem;
+}

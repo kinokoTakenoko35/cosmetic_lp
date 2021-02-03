@@ -1,0 +1,179 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: none;
+          box-sizing: none;
+}
+
+html {
+  font-family: "YuGothic";
+}
+
+h3,
+h2,
+li > a {
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin: 0rem 12rem;
+}
+
+.hero-section {
+  background: url(/images/karly-jones-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*縦横比の％指定　高さ÷幅×100*/
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 10vh;
+  margin: 0rem 4rem;
+}
+
+.logo-img {
+  width: 120px;
+  height: 44px;
+}
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: white;
+  font-size: 18px;
+  margin: 0rem 0rem 0rem 2rem;
+}
+
+.nav-menu .active {
+  border-bottom: 2px solid #ffffff;
+}
+
+.hero {
+  height: 90vh;
+}
+
+.hero h2 {
+  font-size: 64px;
+  color: white;
+}
+
+.hero h4 {
+  font-size: 24px;
+  color: white;
+}
+
+.disp {
+  width: 50%;
+  padding: 21rem 0rem 14rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about {
+  height: 100vh;
+}
+
+.about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8rem 0rem;
+}
+
+.about-text,
+.about-img {
+  width: 50%;
+}
+
+.about-text {
+  width: 30%;
+  height: 500px;
+  border: 1px solid #707070;
+  padding: 4rem;
+  background-color: #f2f2f2;
+}
+
+.about-text h3 {
+  font-size: 48px;
+  text-decoration: underline;
+  padding-bottom: 0.6em;
+  text-underline-offset: 0.4em;
+}
+
+.about-text h5 {
+  font-size: 16px;
+  padding-bottom: 2em;
+}
+
+.about-text h4 {
+  font-size: 24px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 2.2rem;
+}
+
+.about-pic {
+  width: 90%;
+  height: 100%;
+  margin: 5rem;
+}
+
+footer {
+  height: 30vh;
+  background: #6f6565;
+  background-image: url(/images/LOGOLOGo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*# sourceMappingURL=style.css.map */

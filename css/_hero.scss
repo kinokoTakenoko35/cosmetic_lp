@@ -1,0 +1,61 @@
+.hero-section {
+  background: url(/images/karly-jones-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*縦横比の％指定　高さ÷幅×100*/
+  //padding-top: 66.63%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  margin: 0rem 4rem;
+}
+
+.logo-img {
+  width: 120px;
+  height: 44px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  a {
+    color: white;
+    font-size: 18px;
+    margin: 0rem 0rem 0rem 2rem;
+  }
+  .active {
+    border-bottom: 2px solid #ffffff;
+  }
+}
+
+.hero {
+  height: 90vh;
+  h2 {
+    font-size: 64px;
+    color: white;
+  }
+  h4 {
+    font-size: 24px;
+    color: white;
+  }
+}
+
+.disp {
+  width: 50%;
+  padding: 21rem 0rem 14rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+}
