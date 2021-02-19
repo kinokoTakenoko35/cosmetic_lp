@@ -1,0 +1,35 @@
+.item {
+  height: 100vh;
+  h3 {
+    font-size: $secound-title-font;
+    text-decoration: underline;
+    padding-bottom: 0.6em;
+    text-underline-offset: 0.4em;
+  }
+  h6 {
+    font-size: $sub-text-font;
+  }
+  h4,
+  h5,
+  p {
+    font-size: $text-font;
+  }
+}
+.item-container {
+  width: 1004px;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.item-card {
+  width: 324px;
+  img {
+    width: 100%;
+    height: 215px;
+  }
+}

@@ -1,3 +1,4 @@
+//メインビジュアルは横幅を指定しないで、フルスクリーンにする
 .hero-section {
   background: url(../images/karly-jones-1.png);
   background-repeat: no-repeat;
@@ -30,6 +31,7 @@ header {
     font-size: 18px;
     margin: 0rem 0rem 0rem 2rem;
   }
+  //ボーダーはaタグにhoverした時にだけ
   .active {
     border-bottom: 2px solid #ffffff;
   }
@@ -37,16 +39,16 @@ header {
 
 .hero {
   height: 90vh;
-  h2 {
-    font-size: 64px;
+  h1 {
+    font-size: $title-font;
     color: white;
   }
-  h4 {
-    font-size: 24px;
+  h2 {
+    font-size: $sub-text-font;
     color: white;
   }
 }
-
+//メインビジュアルにpsotion:relative;をして、キャッチコピーにはabsoluteをつける
 .disp {
   width: 50%;
   padding: 21rem 0rem 14rem 0rem;
