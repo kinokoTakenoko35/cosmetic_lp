@@ -1,0 +1,35 @@
+.blog-section {
+  background-color: #f2f2f2;
+  height: 100vh;
+  padding-top: 143px;
+}
+.blog-container {
+  width: 1004px;
+  margin: 0 auto;
+  h3 {
+    font-size: $secound-title-font;
+    text-decoration: underline;
+    padding-bottom: 0.6em;
+    text-underline-offset: 0.4em;
+  }
+  h4,
+  h5,
+  p {
+    font-size: $text-font;
+  }
+  .blog-title-text {
+    color: #4d4d4d;
+    margin: 0px 0px 0px 2rem;
+  }
+}
+.blog-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blog-title {
+  display: flex;
+  justify-content: start;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}

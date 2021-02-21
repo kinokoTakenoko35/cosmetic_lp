@@ -1,0 +1,40 @@
+.acccess-container {
+  width: 1004px;
+  margin: 0 auto;
+  h3 {
+    font-size: $secound-title-font;
+    text-decoration: underline;
+    padding-bottom: 0.6em;
+    text-underline-offset: 0.4em;
+  }
+  h4,
+  h5,
+  p {
+    font-size: $text-font;
+  }
+}
+.access-text {
+  margin-top: 159px;
+  margin-bottom: 93px;
+}
+.map-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 152px;
+}
+
+.office-info,
+.access-info {
+  h6 {
+    font-size: $sub-text-font;
+  }
+  p {
+    font-size: $text-font;
+  }
+}
+.access-info {
+  width: 751px;
+  margin: 0 auto;
+  margin-bottom: 219px;
+}

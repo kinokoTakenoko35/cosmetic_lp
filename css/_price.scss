@@ -1,0 +1,22 @@
+.price-containe {
+  width: 1004px;
+  margin: 0 auto;
+  h3 {
+    font-size: $secound-title-font;
+    text-decoration: underline;
+    padding-bottom: 0.6em;
+    text-underline-offset: 0.4em;
+  }
+  h4,
+  h5,
+  p {
+    font-size: $text-font;
+  }
+  .price-list {
+    width: 494px;
+    border: 2px solid #a38787;
+  }
+  tr {
+    border-bottom: 1px solid #707070;
+  }
+}
