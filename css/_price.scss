@@ -1,6 +1,15 @@
+.price {
+  margin-top: 157px;
+  margin-bottom: 448px;
+}
 .price-containe {
+  height: 100vh;
   width: 1004px;
   margin: 0 auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+
   h3 {
     font-size: $secound-title-font;
     text-decoration: underline;
@@ -13,10 +22,33 @@
     font-size: $text-font;
   }
   .price-list {
+    position: relative;
+    top: 0;
     width: 494px;
-    border: 2px solid #a38787;
+    height: 549px;
+    border: 4px solid #a38787;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 55px 85px 85px 85px;
+    z-index: 2;
   }
-  tr {
-    border-bottom: 1px solid #707070;
+  .price-title {
+    text-align: center;
+    padding-bottom: 81px;
   }
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    padding: 1rem 0rem;
+    border-bottom: 1px dashed #707070;
+    width: 100%;
+  }
+}
+.price-image {
+  display: grid;
+  position: absolute;
+  top: 200px;
+  left: 341px;
+  background-size: 663px 884px;
+  background-position-x: right;
 }

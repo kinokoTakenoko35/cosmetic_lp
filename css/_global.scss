@@ -135,21 +135,29 @@ table {
 }
 
 html {
-  font-family: "YuGothic";
+  font-family: "YuGothic", sans-serif;
 }
-
-body {
-  //background: rgb(100, 138, 125);
-}
-
+h1,
 h3,
-h2,
+h6 {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
 li > a {
   font-family: "Montserrat";
+}
+h4,
+h5 {
+  font-weight: bold;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  line-height: 32px;
 }
 
 section {

@@ -1,5 +1,6 @@
 .item {
-  height: 100vh;
+  //height: 100vh;
+  margin-top: 147px;
   h3 {
     font-size: $secound-title-font;
     text-decoration: underline;
@@ -8,23 +9,30 @@
   }
   h6 {
     font-size: $sub-text-font;
+    margin-top: 34px;
   }
   h4,
   h5,
   p {
     font-size: $text-font;
   }
+  p {
+    margin-top: 23px;
+  }
+  .item-name {
+    margin-top: 23px;
+  }
 }
 .item-container {
   width: 1004px;
-  margin: 0 auto;
-  margin-top: 159px;
+  margin: auto auto;
 }
 
 .card-container {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: 23px;
 }
 
 .item-card {

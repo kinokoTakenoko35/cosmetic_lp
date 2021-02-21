@@ -1,10 +1,5 @@
-.about {
-  height: 100vh;
-}
-
 .about-container {
   //about以下は全てwidth:1004px;にしてmargin:0 auto;でブラウザの中央に配置する
-  //aboutもheaderと同じ要領で横並びにし、垂直方向も中央揃えにする
   width: 1004px;
   display: flex;
   justify-content: space-between;
@@ -12,7 +7,13 @@
   margin: 0 auto;
   margin-top: 152px;
 }
+h1 {
+  line-height: 80px;
+}
 
+h2 {
+  margin-top: 23px;
+}
 .about-text,
 .about-img {
   width: 50%;
@@ -26,22 +27,40 @@
   background-color: #f2f2f2;
   h3 {
     font-size: $secound-title-font;
-    text-decoration: underline;
-    padding-bottom: 0.6em;
-    text-underline-offset: 0.4em;
+    //text-decoration: underline;
+    //padding-bottom: 0.6em;
+    //text-underline-offset: 0.4em;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+     &:before {
+      content: "ああああ";
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      display: inline-block;
+      width: 60px;
+      height: 5px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); /*位置調整*/
+      background-color: black; /*線の色*/
+    }
   }
   h4 {
     font-size: $text-font;
     padding-bottom: 2em;
+    margin-bottom: 43px;
   }
   h5 {
     font-size: $sub-text-font;
+    margin-bottom: 15px;
   }
   p {
     font-size: $text-font;
-    line-height: 2.2rem;
+    //line-height: 2.2rem;
   }
 }
+
 .about-pic {
   width: 90%;
   height: 100%;

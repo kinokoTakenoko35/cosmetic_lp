@@ -17,15 +17,22 @@
   p {
     font-size: $text-font;
   }
+  h5 {
+    font-family: "Montserrat";
+  }
+  h4 {
+    margin-top: 24px;
+  }
   .blog-title-text {
     color: #4d4d4d;
-    margin: 0px 0px 0px 2rem;
+    margin: 0rem 2rem;
   }
 }
 .blog-card-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 62px;
 }
 .blog-title {
   display: flex;

@@ -8,9 +8,18 @@
     text-underline-offset: 0.4em;
   }
   h4,
-  h5,
+  h5 {
+    font-size: $text-font;
+  }
+  h4 {
+    margin-top: 24px;
+  }
+  h6 {
+    margin-bottom: 13px;
+  }
   p {
     font-size: $text-font;
+    margin-bottom: 29px;
   }
 }
 .access-text {
