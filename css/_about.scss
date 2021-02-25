@@ -10,20 +10,18 @@
 h1 {
   line-height: 80px;
 }
-
 h2 {
   margin-top: 23px;
 }
 .about-text,
 .about-img {
-  width: 50%;
+  width: 49.3%;
 }
-
 .about-text {
-  width: 30%;
-  height: 500px;
+  width: 27.2%;
+  height: 363px;
   border: 1px solid #707070;
-  padding: 4rem;
+  padding: 75px 67px 60px 67px;
   background-color: #f2f2f2;
   h3 {
     font-size: $secound-title-font;
@@ -32,14 +30,14 @@ h2 {
     //text-underline-offset: 0.4em;
     position: relative;
     display: inline-block;
-    margin-bottom: 1em;
-     &:before {
-      content: "ああああ";
+    margin-bottom: 40px;
+    &:before {
+      content: "";
       position: absolute;
-      left: 50%;
-      bottom: -15px;
+      left: 22%;
+      bottom: -25px;
       display: inline-block;
-      width: 60px;
+      width: 68px;
       height: 5px;
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%); /*位置調整*/
@@ -48,12 +46,12 @@ h2 {
   }
   h4 {
     font-size: $text-font;
-    padding-bottom: 2em;
+    //padding-bottom: 2em;
     margin-bottom: 43px;
   }
   h5 {
     font-size: $sub-text-font;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
   }
   p {
     font-size: $text-font;
@@ -62,6 +60,5 @@ h2 {
 }
 
 .about-pic {
-  width: 90%;
-  height: 100%;
+  width: 100%;
 }

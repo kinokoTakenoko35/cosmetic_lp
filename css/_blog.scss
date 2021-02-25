@@ -1,28 +1,39 @@
 .blog-section {
   background-color: #f2f2f2;
-  height: 100vh;
-  padding-top: 143px;
+  padding-top: 138px;
+  padding-bottom: 136px;
 }
 .blog-container {
   width: 1004px;
   margin: 0 auto;
   h3 {
     font-size: $secound-title-font;
-    text-decoration: underline;
-    padding-bottom: 0.6em;
-    text-underline-offset: 0.4em;
-  }
-  h4,
-  h5,
-  p {
-    font-size: $text-font;
-  }
-  h5 {
-    font-family: "Montserrat";
+    position: relative;
+    display: inline-block;
+    margin-bottom: 24px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 34px;
+      bottom: -24px;
+      display: inline-block;
+      width: 68px;
+      height: 5px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); /*位置調整*/
+      background-color: black; /*線の色*/
+    }
   }
   h4 {
+    font-size: $text-font;
     margin-top: 24px;
   }
+  time {
+    font-size: $text-font;
+    font-family: "Montserrat";
+    font-weight: bold;
+  }
+
   .blog-title-text {
     color: #4d4d4d;
     margin: 0rem 2rem;
@@ -37,6 +48,9 @@
 .blog-title {
   display: flex;
   justify-content: start;
-  margin-top: 32px;
+  margin-top: 29px;
   margin-bottom: 10px;
+}
+.blog-title-text1 {
+  margin: 0rem 1rem;
 }

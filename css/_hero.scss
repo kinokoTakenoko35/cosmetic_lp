@@ -7,15 +7,16 @@
   /*縦横比の％指定　高さ÷幅×100*/
   //padding-top: 66.63%;
 }
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 10vh;
-  margin: 0rem 4rem;
+  margin: 0px 0px 0px 40px;
 }
-
+.logo {
+  padding-top: 35.3px;
+}
 .logo-img {
   width: 120px;
   height: 44px;
@@ -37,6 +38,10 @@ header {
   a:hover {
     border-bottom: 3px solid #fff;
   }
+  li {
+    margin-right: 30.8px;
+    margin-top: -2px;
+  }
 }
 
 .hero {
@@ -48,12 +53,13 @@ header {
   h2 {
     font-size: $sub-text-font;
     color: white;
+    letter-spacing: 1.6px;
   }
 }
 //メインビジュアルにpsotion:relative;をして、キャッチコピーにはabsoluteをつける
 .disp {
   width: 50%;
-  padding: 21rem 0rem 14rem 0rem;
+  padding: 17.3rem 0rem 11rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
