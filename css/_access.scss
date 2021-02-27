@@ -24,16 +24,18 @@
     margin-top: 24px;
   }
   h6 {
-    margin-bottom: 16px;
+    margin-left: 9px;
+    margin-bottom: 30px;
+    font-size: $sub-text-font;
   }
-  p {
-    font-size: $text-font;
-    margin-bottom: 32px;
+  dd {
+    margin-bottom: 20px;
+    line-height: 24px;
   }
 }
 .access-text {
   margin-top: 159px;
-  margin-bottom: 93px;
+  margin-bottom: 97px;
 }
 .map-container {
   display: flex;
@@ -45,13 +47,14 @@
   font-size: $sub-text-font;
   font-weight: bold;
   margin-bottom: 20px;
+  font-family: "Montserrat";
 }
 .small {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .access-info {
-  width: 751px;
+  width: 746px;
   margin: 0 auto;
   margin-bottom: 219px;
 }
