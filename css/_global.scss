@@ -160,11 +160,27 @@ a {
 //line-height: 32px;
 //}
 
-section {
-  margin: 0px 138px;
-}
-
 $title-font: 64px;
 $secound-title-font: 48px;
 $sub-text-font: 24px;
 $text-font: 16px;
+
+@media (max-width: 576px) {
+  section {
+    margin: 0px 15px;
+  }
+  p,
+  h4,
+  th,
+  td,
+  dd,
+  .small {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    margin: 0 20px;
+  }
+}

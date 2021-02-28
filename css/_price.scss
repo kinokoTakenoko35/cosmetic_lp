@@ -62,6 +62,9 @@
     padding: 1rem 0rem;
     font-weight: bold;
   }
+  .price-bottom {
+    border: none;
+  }
 }
 .price-image {
   display: grid;
@@ -70,4 +73,37 @@
   left: 341px;
   background-size: 663px 884px;
   background-position-x: right;
+}
+
+@media screen and(max-width: 576px) {
+  .price {
+    margin: 120px 0px 140px 0px;
+    background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
+    background-position: center;
+  }
+  .price-containe {
+    width: 90%;
+    margin: 0px auto;
+    .price-list {
+      top: 0px;
+      padding: 70px 60px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .price-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .price {
+    margin: 120px 0px 140px 0px;
+    background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .price-image {
+    display: none;
+  }
 }

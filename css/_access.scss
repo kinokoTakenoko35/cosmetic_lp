@@ -1,3 +1,8 @@
+.access {
+  display: flex;
+  //flex-wrap: wrap;
+}
+
 .acccess-container {
   width: 1004px;
   margin: 0 auto;
@@ -42,6 +47,12 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 152px;
+  .office-info {
+    width: 30%;
+  }
+  img {
+    width: 70%;
+  }
 }
 .strong {
   font-size: $sub-text-font;
@@ -57,4 +68,28 @@
   width: 746px;
   margin: 0 auto;
   margin-bottom: 219px;
+}
+
+@media screen and(max-width: 576px) {
+  .acccess-container {
+    h6 {
+      margin-left: 0px;
+    }
+  }
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 37px;
+    .office-info {
+      width: 100%;
+    }
+    img {
+      margin-top: 130px;
+      width: 100%;
+    }
+  }
+  .access-info {
+    width: 100%;
+    margin-bottom: 43px;
+  }
 }

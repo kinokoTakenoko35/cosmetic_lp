@@ -5,3 +5,13 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
 }
+@media screen and (max-width: 576px) {
+  footer {
+    height: 30vh;
+    background: #6f6565;
+    background-image: url(../images/LOGOLOGo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 251px;
+  }
+}
