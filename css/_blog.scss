@@ -44,11 +44,16 @@
   }
 }
 .blog-card-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 62px;
+}
+.blog-cards {
+  margin: 0 50px 50px 0;
+  width: 33.33333333%;
 }
 .blog-title {
   display: flex;
@@ -61,8 +66,22 @@
 }
 
 @media screen and (max-width: 576px) {
-  .blog-cards,
-  img {
-    width: 100%;
+  .blog-container {
+    time {
+      font-size: 12px;
+    }
+  }
+  .blog-cards {
+    margin: 0 20px 20px 0;
+    width: calc(50% - 20px / 2);
+    .blog-cards:nth-child(2n) {
+      margin-right: 0;
+    }
+    .blog-cards:nth-child(3n) {
+      margin-right: 0px;
+    }
+    p {
+      margin-bottom: 21.5px;
+    }
   }
 }
