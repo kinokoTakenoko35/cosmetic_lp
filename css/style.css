@@ -284,6 +284,10 @@ header {
 }
 
 @media screen and (max-width: 576px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   header {
     margin: 0px 0px 0px 20px;
   }
@@ -311,7 +315,85 @@ header {
     line-height: 24px;
   }
   .nav_menu {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-transition: left 0.5s;
+    transition: left 0.5s;
+    z-index: 99;
+  }
+  .nav_menu a {
+    color: #000000;
+    margin: 20px 40px;
+    font-size: 24px;
+  }
+  .nav_menu a:nth-child(1n) {
+    margin-top: 110px;
+  }
+  #navBtn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+  }
+  #navBtn::before,
+  #navBtn::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: black;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  #navBtn::before {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    -webkit-box-shadow: 0 10px black;
+            box-shadow: 0 10px black;
+  }
+  /* ナビゲーションボタン（閉じる） */
+  .open #navBtn {
+    z-index: 100;
+  }
+  .open #navBtn::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .open #navBtn::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  /* ナビゲーションメニュー 開いた時*/
+  .open .nav {
+    left: 0;
   }
 }
 
