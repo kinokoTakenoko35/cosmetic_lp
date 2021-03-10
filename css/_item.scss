@@ -1,6 +1,5 @@
 .item {
-  //height: 100vh;
-  margin-top: 151px;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
 
@@ -53,7 +52,7 @@
 }
 .item-container {
   width: 1004px;
-  margin: auto auto;
+  margin: 152px auto;
 }
 
 .card-container {
@@ -73,8 +72,38 @@
 }
 
 @media screen and(max-width: 576px) {
+  .item {
+    height: auto;
+    .item-container {
+      margin: 130px auto;
+      .section-titile {
+        font-size: 38px;
+        margin-bottom: 32px;
+        &::before {
+          bottom: -18px;
+        }
+      }
+    }
+    h4,
+    .item-name {
+      font-size: 12px;
+      margin-top: 9px;
+    }
+    dt {
+      margin-top: 18px;
+      line-height: 30px;
+    }
+    dd {
+      font-size: 12px;
+      margin-top: 9px;
+      line-height: 20px;
+      margin-bottom: 18px;
+    }
+  }
+
   .item-card {
     width: 100%;
+    margin: 4px auto;
     img {
       height: 100%;
     }

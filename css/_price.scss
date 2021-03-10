@@ -1,10 +1,14 @@
 .price {
-  margin-top: 185px;
-  margin-bottom: 380px;
+  margin-top: 180px;
+  background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
+  background-repeat: no-repeat;
+  background-position-x: 78%;
+  background-position-y: 6%;
 }
-.price-containe {
-  height: 100vh;
+
+.price-container {
   width: 1004px;
+  padding-bottom: 502px;
   margin: 0 auto;
   display: flex;
   position: relative;
@@ -66,44 +70,34 @@
     border: none;
   }
 }
-.price-image {
-  display: grid;
-  position: absolute;
-  top: 143px;
-  left: 341px;
-  background-size: 663px 884px;
-  background-position-x: right;
-}
 
 @media screen and(max-width: 576px) {
   .price {
-    margin: 120px 0px 140px 0px;
-    background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
-    background-position: center;
+    margin: auto 0;
+    height: 100vh;
+    background-size: cover;
+    //margin-top: 82px;
+    //background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
   }
-  .price-containe {
-    width: 90%;
-    margin: 0px auto;
+  .price-container {
+    width: 92%;
+    margin: 20px auto;
+    padding-bottom: 72px;
     .price-list {
-      top: 0px;
+      top: 63px;
       padding: 70px 60px;
       background-color: rgba(255, 255, 255, 0.8);
     }
-  }
-
-  .price-image {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .price {
-    margin: 120px 0px 140px 0px;
-    background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .price-image {
-    display: none;
+    .section-titile {
+      font-size: 38px;
+      margin-bottom: 36px;
+      &::before {
+        left: 50px;
+        bottom: -23px;
+      }
+    }
+    h4 {
+      font-size: 12px;
+    }
   }
 }

@@ -28,12 +28,12 @@
     font-size: $text-font;
     margin-top: 24px;
   }
-  h6 {
+  h5 {
     margin-left: 9px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: $sub-text-font;
   }
-  dd {
+  li {
     margin-bottom: 20px;
     line-height: 24px;
   }
@@ -50,8 +50,9 @@
   .office-info {
     width: 30%;
   }
-  img {
-    width: 70%;
+  iframe {
+    width: 664px;
+    height: 421px;
   }
 }
 .strong {
@@ -68,11 +69,23 @@
   width: 746px;
   margin: 0 auto;
   margin-bottom: 219px;
+  ol {
+    width: 770px;
+  }
+}
+.ac-li {
+  display: block;
+  margin: 24px 0 27px 0;
+  line-height: 23px;
+  padding: 0 10px;
 }
 
 @media screen and(max-width: 576px) {
   .acccess-container {
-    h6 {
+    .section-titile {
+      font-size: 38px;
+    }
+    h5 {
       margin-left: 0px;
     }
   }

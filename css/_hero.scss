@@ -7,6 +7,12 @@
   /*縦横比の％指定　高さ÷幅×100*/
   //padding-top: 66.63%;
 }
+
+/* PCではボタン非表示 */
+#navBtn {
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +51,7 @@ header {
 }
 
 .hero {
-  height: 90vh;
+  height: 86vh;
   h1 {
     font-size: $title-font;
     color: white;
@@ -69,12 +75,14 @@ header {
 .arrow {
   position: absolute;
   right: 50%;
-  bottom: 40px;
+  bottom: 58px;
 }
 
-// #navBtn {
-//   display: none;
-// }
+@media screen and (max-width: 768px) {
+  .disp {
+    margin: auto 20px;
+  }
+}
 
 @media screen and(max-width:576px) {
   html,
@@ -91,7 +99,7 @@ header {
   .arrow {
     width: 17.07px;
     position: absolute;
-    bottom: 15.4px;
+    bottom: 58px;
     right: 50%;
   }
   .disp {
@@ -118,6 +126,7 @@ header {
     justify-content: start;
     flex-direction: column;
     align-items: flex-start;
+    /* 右からスライド */
     transition: left 0.5s;
     z-index: 99;
     a {
@@ -128,8 +137,10 @@ header {
         margin-top: 110px;
       }
     }
+    a:hover {
+      border-bottom: 3px solid black;
+    }
   }
-
   #navBtn {
     position: fixed;
     top: 40px;
@@ -141,20 +152,19 @@ header {
     width: 40px;
     height: 20px;
     cursor: pointer;
-  }
-
-  #navBtn::before,
-  #navBtn::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: black;
-    transform: translateY(10px);
-    transition: 0.3s ease-in-out;
-  }
-  #navBtn::before {
-    transform: translateY(-10px);
-    box-shadow: 0 10px black;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: black;
+      transform: translateY(10px);
+      transition: 0.3s ease-in-out;
+    }
+    &::before {
+      transform: translateY(-10px);
+      box-shadow: 0 10px black;
+    }
   }
   /* ナビゲーションボタン（閉じる） */
   .open #navBtn {
@@ -171,11 +181,5 @@ header {
   /* ナビゲーションメニュー 開いた時*/
   .open .nav {
     left: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .disp {
-    margin: auto 20px;
   }
 }
