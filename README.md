@@ -19,12 +19,9 @@ FB 内容
 - tr:last-child とか last-of-type
 - iframe googlemaps から埋め込み用のコードを取得
 - 定義されているものは dl で実装
-- article というのは単独でもコンテンツになるくらい大きな単位です。
-  例えば h タグが入るくらいですね。
-  なので、このデザイン、情報優先度であれば
-
+- article というのは単独でもコンテンツになるくらい大きな単位です。例えば h タグが入るくらいですね。なので、このデザイン、情報優先度であればこれくらいが最適。
 <ul class="blog-card-container">
 	<li class="blog-cards">
-これくらいが最適ですね。
+
 
 - ハンバーガーメニューをかんたんに実装できる JQuery Drawer.js
