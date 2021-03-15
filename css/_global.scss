@@ -167,13 +167,13 @@ $text-font: 16px;
 
 @media screen and (max-width: 768px) {
   section {
-    margin: 0 20px;
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 576px) {
   section {
-    margin: 0px 15px;
+    padding: 0px 15px;
   }
   p,
   h4,

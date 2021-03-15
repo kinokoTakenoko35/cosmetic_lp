@@ -1,4 +1,492 @@
 @charset "UTF-8";
+/* drower.js .scss */
+/*!------------------------------------*\
+    Base
+\*!------------------------------------*/
+.drawer-open {
+  overflow: hidden !important;
+}
+
+.drawer-nav {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  overflow: hidden;
+  width: 16.25rem;
+  height: 100%;
+  color: #222;
+  background-color: #fff;
+}
+
+.drawer-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 3.75rem;
+  display: block;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.drawer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drawer-menu-item {
+  font-size: 1rem;
+  display: block;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.drawer-menu-item:hover {
+  text-decoration: underline;
+  color: #555;
+  background-color: transparent;
+}
+
+/*! overlay */
+.drawer-overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.drawer-open .drawer-overlay {
+  display: block;
+}
+
+/*!------------------------------------*\
+    Top
+\*!------------------------------------*/
+.drawer--top .drawer-nav {
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  -webkit-transition: top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.drawer--top.drawer-open .drawer-nav {
+  top: 0;
+}
+
+.drawer--top .drawer-hamburger,
+.drawer--top.drawer-open .drawer-hamburger {
+  right: 0;
+}
+
+/*!------------------------------------*\
+    Left
+\*!------------------------------------*/
+.drawer--left .drawer-nav {
+  left: -16.25rem;
+  -webkit-transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.drawer--left.drawer-open .drawer-nav,
+.drawer--left .drawer-hamburger,
+.drawer--left.drawer-open .drawer-navbar .drawer-hamburger {
+  left: 0;
+}
+
+.drawer--left.drawer-open .drawer-hamburger {
+  left: 16.25rem;
+}
+
+/*!------------------------------------*\
+    Right
+\*!------------------------------------*/
+.drawer--right .drawer-nav {
+  right: -16.25rem;
+  -webkit-transition: right 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: right 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.drawer--right.drawer-open .drawer-nav,
+.drawer--right .drawer-hamburger,
+.drawer--right.drawer-open .drawer-navbar .drawer-hamburger {
+  right: 0;
+}
+
+.drawer--right.drawer-open .drawer-hamburger {
+  right: 16.25rem;
+}
+
+/*!------------------------------------*\
+    Hamburger
+\*!------------------------------------*/
+.drawer-hamburger {
+  position: fixed;
+  z-index: 104;
+  top: 0;
+  display: block;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 2rem;
+  padding: 0;
+  padding-top: 18px;
+  padding-right: 0.75rem;
+  padding-bottom: 30px;
+  padding-left: 0.75rem;
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.drawer-hamburger:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.drawer-hamburger-icon {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+}
+
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:before,
+.drawer-hamburger-icon:after {
+  width: 100%;
+  height: 2px;
+  -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  background-color: #222;
+}
+
+.drawer-hamburger-icon:before,
+.drawer-hamburger-icon:after {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  content: ' ';
+}
+
+.drawer-hamburger-icon:after {
+  top: 10px;
+}
+
+.drawer-open .drawer-hamburger-icon {
+  background-color: transparent;
+}
+
+.drawer-open .drawer-hamburger-icon:before,
+.drawer-open .drawer-hamburger-icon:after {
+  top: 0;
+}
+
+.drawer-open .drawer-hamburger-icon:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.drawer-open .drawer-hamburger-icon:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/*!------------------------------------*\
+    accessibility
+\*!------------------------------------*/
+/*!
+ * Only display content to screen readers
+ * See: http://a11yproject.com/posts/how-to-hide-content
+ */
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/*!
+ * Use in conjunction with .sr-only to only display content when it's focused.
+ * Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+ * Credit: HTML5 Boilerplate
+ */
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/*!------------------------------------*\
+    Sidebar
+\*!------------------------------------*/
+.drawer--sidebar {
+  background-color: #fff;
+}
+
+.drawer--sidebar .drawer-contents {
+  background-color: #fff;
+}
+
+@media (min-width: 64em) {
+  .drawer--sidebar .drawer-hamburger {
+    display: none;
+    visibility: hidden;
+  }
+  .drawer--sidebar .drawer-nav {
+    display: block;
+    -webkit-transform: none;
+            transform: none;
+    position: fixed;
+    width: 12.5rem;
+    height: 100%;
+  }
+  /*! Left */
+  .drawer--sidebar.drawer--left .drawer-nav {
+    left: 0;
+    border-right: 1px solid #ddd;
+  }
+  .drawer--sidebar.drawer--left .drawer-contents {
+    margin-left: 12.5rem;
+  }
+  /*! Right */
+  .drawer--sidebar.drawer--right .drawer-nav {
+    right: 0;
+    border-left: 1px solid #ddd;
+  }
+  .drawer--sidebar.drawer--right .drawer-contents {
+    margin-right: 12.5rem;
+  }
+  /*! container */
+  .drawer--sidebar .drawer-container {
+    max-width: 48rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .drawer--sidebar .drawer-nav {
+    width: 16.25rem;
+  }
+  .drawer--sidebar.drawer--left .drawer-contents {
+    margin-left: 16.25rem;
+  }
+  .drawer--sidebar.drawer--right .drawer-contents {
+    margin-right: 16.25rem;
+  }
+  /*! container */
+  .drawer--sidebar .drawer-container {
+    max-width: 60rem;
+  }
+}
+
+/*!------------------------------------*\
+    Navbar
+\*!------------------------------------*/
+.drawer--navbarTopGutter {
+  padding-top: 3.75rem;
+}
+
+.drawer-navbar .drawer-navbar-header {
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.drawer-navbar {
+  z-index: 102;
+  top: 0;
+  width: 100%;
+}
+
+/*! .drawer-navbar modifier */
+.drawer-navbar--fixed {
+  position: fixed;
+}
+
+.drawer-navbar-header {
+  position: relative;
+  z-index: 102;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 3.75rem;
+  padding: 0 0.75rem;
+  text-align: center;
+}
+
+.drawer-navbar .drawer-brand {
+  line-height: 3.75rem;
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: none;
+}
+
+.drawer-navbar .drawer-brand:hover {
+  background-color: transparent;
+}
+
+.drawer-navbar .drawer-nav {
+  padding-top: 3.75rem;
+}
+
+.drawer-navbar .drawer-menu {
+  padding-bottom: 7.5rem;
+}
+
+@media (min-width: 64em) {
+  .drawer-navbar {
+    height: 3.75rem;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+  }
+  .drawer-navbar .drawer-navbar-header {
+    position: relative;
+    display: block;
+    float: left;
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+  .drawer-navbar .drawer-menu--right {
+    float: right;
+  }
+  .drawer-navbar .drawer-menu li {
+    float: left;
+  }
+  .drawer-navbar .drawer-menu-item {
+    line-height: 3.75rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .drawer-navbar .drawer-hamburger {
+    display: none;
+  }
+  .drawer-navbar .drawer-nav {
+    position: relative;
+    left: 0;
+    overflow: visible;
+    width: auto;
+    height: 3.75rem;
+    padding-top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .drawer-navbar .drawer-menu {
+    padding: 0;
+  }
+  /*! dropdown */
+  .drawer-navbar .drawer-dropdown-menu {
+    position: absolute;
+    width: 16.25rem;
+    border: 1px solid #ddd;
+  }
+  .drawer-navbar .drawer-dropdown-menu-item {
+    padding-left: 0.75rem;
+  }
+}
+
+/*!------------------------------------*\
+    Dropdown
+\*!------------------------------------*/
+.drawer-dropdown-menu {
+  display: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.drawer-dropdown-menu > li {
+  width: 100%;
+  list-style: none;
+}
+
+.drawer-dropdown-menu-item {
+  line-height: 3.75rem;
+  display: block;
+  padding: 0;
+  padding-right: 0.75rem;
+  padding-left: 1.5rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.drawer-dropdown-menu-item:hover {
+  text-decoration: underline;
+  color: #555;
+  background-color: transparent;
+}
+
+/*! open */
+.drawer-dropdown.open > .drawer-dropdown-menu {
+  display: block;
+}
+
+/*! drawer-caret */
+.drawer-dropdown .drawer-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  -webkit-transition: opacity .2s ease, -webkit-transform .2s ease;
+  transition: opacity .2s ease, -webkit-transform .2s ease;
+  transition: transform .2s ease, opacity .2s ease;
+  transition: transform .2s ease, opacity .2s ease, -webkit-transform .2s ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+/*! open */
+.drawer-dropdown.open .drawer-caret {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/*!------------------------------------*\
+    Container
+\*!------------------------------------*/
+.drawer-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 64em) {
+  .drawer-container {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .drawer-container {
+    max-width: 70rem;
+  }
+}
+
+/* your-project.scss */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -167,13 +655,13 @@ a {
 
 @media screen and (max-width: 768px) {
   section {
-    margin: 0 20px;
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 576px) {
   section {
-    margin: 0px 15px;
+    padding: 0px 15px;
   }
   p,
   h4,
@@ -185,74 +673,13 @@ a {
   }
 }
 
-.hero-section {
+.hero {
+  height: 100vh;
   background: url(../images/karly-jones-1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   /*縦横比の％指定　高さ÷幅×100*/
-}
-
-/* PCではボタン非表示 */
-#navBtn {
-  display: none;
-}
-
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 10vh;
-  margin: 0px 0px 0px 40px;
-}
-
-.logo {
-  padding-top: 35.3px;
-}
-
-.logo-img {
-  width: 120px;
-  height: 44px;
-}
-
-.nav_menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style: none;
-}
-
-.nav_menu a {
-  color: white;
-  font-size: 18px;
-  display: block;
-  float: right;
-  margin: 0rem 0rem 0rem 2rem;
-}
-
-.nav_menu a:hover {
-  border-bottom: 3px solid #fff;
-}
-
-.nav_menu li {
-  margin-right: 30.8px;
-  margin-top: -2px;
-}
-
-.hero {
-  height: 86vh;
 }
 
 .hero h1 {
@@ -266,9 +693,80 @@ header {
   letter-spacing: 1.6px;
 }
 
+.font-color {
+  color: black !important;
+}
+
+.drawer {
+  padding-top: 0rem;
+}
+
+.drawer .drawer-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 10vh;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.drawer .drawer-navbar .drawer-container {
+  margin: 8px 0 0 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*ドロワーメニュー全体の背景色を変更する*/
+.drawer-nav {
+  background-color: transparent;
+}
+
+.drawer-nav .drawer-menu-item {
+  color: white;
+  font-size: 18px;
+  display: block;
+  float: right;
+  margin: 0rem 0rem 0rem 2rem;
+  line-height: 2.75rem;
+}
+
+.drawer-nav .drawer-menu-item:hover {
+  border-bottom: 3px solid #fff;
+  border-width: 4px;
+  text-decoration: none;
+}
+
+.drawer-nav .drawer-menu-item li {
+  margin-right: 30.8px;
+  margin-top: -2px;
+}
+
+.logo-img {
+  position: fixed;
+  left: 42px;
+  margin-top: 20px;
+  width: 120px;
+  height: 44px;
+}
+
 .disp {
   width: 50%;
-  padding: 17.3rem 0rem 11rem 0rem;
+  padding: 22.3rem 0rem 11rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,135 +777,108 @@ header {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 0 130px;
+  margin: 0 142px;
 }
 
 .arrow {
   position: absolute;
-  right: 50%;
-  bottom: 58px;
+  right: 48%;
+}
+
+@media screen and (max-width: 1023px) {
+  .drawer .drawer-navbar .drawer-container {
+    width: 0%;
+  }
+  /*ハンバーガーアイコンの背景色・位置・余白を変更*/
+  .drawer-hamburger {
+    width: 2.2rem;
+    padding: 30px 25px 40px 20px;
+    background-color: white;
+  }
+  .drawer-hamburger:hover {
+    background-color: white;
+  }
+  /*ハンバーガーアイコンの線の太さを変更する*/
+  .drawer-hamburger-icon,
+  .drawer-hamburger-icon:before,
+  .drawer-hamburger-icon:after {
+    height: 3px;
+  }
+  /*OPEN時の背景透過・メニュー配置スタイルの変更*/
+  .drawer--right.drawer-open .drawer-nav,
+  .drawer--right.drawer-open .drawer-navbar .drawer-hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  .drawer--right.drawer-open .drawer-nav a,
+  .drawer--right.drawer-open .drawer-navbar .drawer-hamburger a {
+    color: black;
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  section {
+    margin: 0;
+  }
+  .drawer .drawer-navbar {
+    border: none;
+  }
+  .drawer .drawer-navbar .drawer-container {
+    width: 0%;
+  }
   .disp {
     margin: auto 20px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  html,
-  body {
-    overflow-x: hidden;
+  .drawer-navbar-header {
+    padding: 0;
+    margin-top: 37px;
   }
-  header {
+  .drawer .drawer-navbar {
     margin: 0px 0px 0px 20px;
+    border: none;
+  }
+  .drawer-hamburger {
+    width: 2.2rem;
+    padding: 30px 25px 40px 20px;
   }
   .hero {
     position: relative;
-    height: 90vh;
+    height: 100vh;
+    background-position: center;
+  }
+  .logo-img {
+    position: fixed;
+    left: 21px;
+    margin-top: -7px;
   }
   .arrow {
-    width: 17.07px;
+    width: 20px;
     position: absolute;
-    bottom: 58px;
+    bottom: 13px;
     right: 50%;
   }
+  .arrow .arrow-dis {
+    height: 12px;
+  }
   .disp {
-    margin: auto 0px;
+    margin: auto 10px;
     padding: 0;
   }
   .disp h1 {
-    padding-top: 150px;
+    padding-top: 170px;
     font-size: 40px;
     line-height: 50px;
   }
   .disp h2 {
     font-size: 16px;
     line-height: 24px;
-  }
-  .nav_menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    /* 右からスライド */
-    -webkit-transition: left 0.5s;
-    transition: left 0.5s;
-    z-index: 99;
-  }
-  .nav_menu a {
-    color: #000000;
-    margin: 20px 40px;
-    font-size: 24px;
-  }
-  .nav_menu a:nth-child(1n) {
-    margin-top: 110px;
-  }
-  .nav_menu a:hover {
-    border-bottom: 3px solid black;
-  }
-  #navBtn {
-    position: fixed;
-    top: 40px;
-    right: 40px;
-    padding: 0;
-    outline: none;
-    border: none;
-    background: none;
-    width: 40px;
-    height: 20px;
-    cursor: pointer;
-  }
-  #navBtn::before, #navBtn::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: black;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  #navBtn::before {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-    -webkit-box-shadow: 0 10px black;
-            box-shadow: 0 10px black;
-  }
-  /* ナビゲーションボタン（閉じる） */
-  .open #navBtn {
-    z-index: 100;
-  }
-  .open #navBtn::before {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .open #navBtn::after {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  /* ナビゲーションメニュー 開いた時*/
-  .open .nav {
-    left: 0;
+    margin-top: 0;
   }
 }
 
@@ -499,7 +970,7 @@ h2 {
 
 @media screen and (max-width: 576px) {
   .about {
-    margin-top: 95px;
+    margin-top: 110px;
   }
   .about-text {
     border: none;
@@ -531,7 +1002,6 @@ h2 {
 }
 
 .item {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,7 +1086,7 @@ h2 {
 }
 
 .item-card {
-  width: 324px;
+  width: 32%;
 }
 
 .item-card img {
@@ -664,15 +1134,17 @@ h2 {
 
 .price {
   margin-top: 180px;
+  margin-bottom: 148px;
   background-image: url(../images/jazmin-quaynor-470729-unsplash.png);
   background-repeat: no-repeat;
   background-position-x: 78%;
   background-position-y: 6%;
+  height: 109vh;
+  background-size: auto 100%;
 }
 
 .price-container {
   width: 1004px;
-  padding-bottom: 502px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -681,6 +1153,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*tr:last-childとかlast-of-typeを使って最後の下線を消す*/
 }
 
 .price-container .section-titile {
@@ -713,7 +1186,7 @@ h2 {
 
 .price-container .price-list {
   position: relative;
-  top: -74px;
+  top: -104px;
   width: 316px;
   height: 400px;
   border: 5px solid #a38787;
@@ -724,7 +1197,7 @@ h2 {
 
 .price-container .price-title {
   text-align: center;
-  padding-bottom: 66px;
+  margin-bottom: 66px;
 }
 
 .price-container table {
@@ -749,7 +1222,7 @@ h2 {
   font-weight: bold;
 }
 
-.price-container .price-bottom {
+.price-container tr:last-of-type {
   border: none;
 }
 
@@ -760,7 +1233,7 @@ h2 {
     background-size: cover;
   }
   .price-container {
-    width: 92%;
+    width: 100%;
     margin: 20px auto;
     padding-bottom: 72px;
   }
@@ -836,7 +1309,7 @@ h2 {
 
 .blog-container .blog-title-text {
   color: #4d4d4d;
-  margin: 0rem 2rem;
+  margin: 0rem 1rem;
 }
 
 .blog-card-container {
@@ -850,7 +1323,16 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 62px;
+  margin: 62px auto;
+}
+
+.blog-cards {
+  margin: 0 15px 50px 0;
+  width: 33.33333333%;
+}
+
+.blog-cards:nth-child(4) {
+  display: none;
 }
 
 .blog-title {
@@ -868,25 +1350,56 @@ h2 {
   margin: 0rem 1rem;
 }
 
+img {
+  width: 100%;
+}
+
 @media screen and (max-width: 576px) {
-  .blog-container time {
+  .blog-section {
+    margin-top: 128px;
+    padding-top: 95px;
+    padding-bottom: 0;
+  }
+  .blog-container {
+    margin: 0 0 28px 0;
+  }
+  .blog-container time,
+  .blog-container h4 {
     font-size: 12px;
+    margin-top: 10px;
   }
   .blog-container .section-titile {
     font-size: 38px;
   }
-  .blog-cards {
-    margin: 0 20px 20px 0;
+  .blog-container .blog-title-text1 {
+    margin: 0.5rem;
+  }
+  .blog-container .blog-title-text {
+    margin: 0.5rem;
+  }
+  .blog-card-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 45px;
+  }
+  .blog-card-container .blog-cards {
+    margin: 0 20px 25px 0;
     width: calc(50% - 20px / 2);
   }
-  .blog-cards .blog-cards:nth-child(2n) {
+  .blog-card-container .blog-cards:nth-child(2n) {
     margin-right: 0;
   }
-  .blog-cards .blog-cards:nth-child(3n) {
+  .blog-card-container .blog-cards:nth-child(3n) {
     margin-right: 0px;
   }
-  .blog-cards p {
-    margin-bottom: 21.5px;
+  .blog-card-container .blog-cards:nth-child(4) {
+    display: block;
+  }
+  .blog-card-container .blog-cards img {
+    width: 100%;
+  }
+  .blog-card-container .blog-cards .blog-title {
+    margin: 0;
   }
 }
 
@@ -940,7 +1453,7 @@ h2 {
 }
 
 .access-text {
-  margin-top: 159px;
+  margin-top: 52px;
   margin-bottom: 97px;
 }
 
@@ -995,11 +1508,33 @@ h2 {
 }
 
 @media screen and (max-width: 576px) {
+  .acccess-container {
+    width: 100%;
+  }
   .acccess-container .section-titile {
     font-size: 38px;
   }
+  .acccess-container h4 {
+    font-size: 12px;
+    margin-top: 5px;
+  }
   .acccess-container h5 {
     margin-left: 0px;
+  }
+  .acccess-container .strong {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .acccess-container .small {
+    margin-bottom: 0px;
+  }
+  .acccess-container li {
+    line-height: none;
+    margin: 0;
+  }
+  .access-text {
+    margin-top: 100px;
+    margin-bottom: 24px;
   }
   .map-container {
     display: -webkit-box;
@@ -1014,13 +1549,21 @@ h2 {
   .map-container .office-info {
     width: 100%;
   }
-  .map-container img {
+  .map-container iframe {
     margin-top: 130px;
+    position: center;
     width: 100%;
+    height: 218.81px;
   }
   .access-info {
     width: 100%;
     margin-bottom: 43px;
+  }
+  .access-info ol {
+    width: 100%;
+  }
+  .ac-li {
+    font-size: 12px;
   }
 }
 
