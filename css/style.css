@@ -679,7 +679,6 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /*縦横比の％指定　高さ÷幅×100*/
 }
 
 .hero h1 {
@@ -693,6 +692,7 @@ a {
   letter-spacing: 1.6px;
 }
 
+/*h1フォントカラー変更*/
 .font-color {
   color: black !important;
 }
@@ -734,6 +734,15 @@ a {
 /*ドロワーメニュー全体の背景色を変更する*/
 .drawer-nav {
   background-color: transparent;
+  /*ドロワーメニュー間の余白調整*/
+}
+
+.drawer-nav .drawer-menu li {
+  margin-left: 10px;
+}
+
+.drawer-nav .drawer-menu li:nth-child(5) {
+  margin-right: 10px;
 }
 
 .drawer-nav .drawer-menu-item {
@@ -751,9 +760,13 @@ a {
   text-decoration: none;
 }
 
-.drawer-nav .drawer-menu-item li {
-  margin-right: 30.8px;
-  margin-top: -2px;
+/*logo hidden*/
+#logo {
+  position: fixed;
+}
+
+#logo::before {
+  content: "";
 }
 
 .logo-img {
@@ -789,6 +802,15 @@ a {
   .drawer .drawer-navbar .drawer-container {
     width: 0%;
   }
+  .drawer .drawer-navbar .drawer-container .drawer-menu {
+    margin-left: 40px;
+  }
+  .drawer .drawer-navbar .drawer-container .drawer-menu li {
+    margin-bottom: 40px;
+  }
+  .drawer .drawer-navbar .drawer-container .drawer-menu:nth-child(1) {
+    margin-top: 40px;
+  }
   /*ハンバーガーアイコンの背景色・位置・余白を変更*/
   .drawer-hamburger {
     width: 2.2rem;
@@ -797,6 +819,10 @@ a {
   }
   .drawer-hamburger:hover {
     background-color: white;
+  }
+  /*manu clickしたら背景色を透明化*/
+  .hambuger-open-bk {
+    background-color: transparent !important;
   }
   /*ハンバーガーアイコンの線の太さを変更する*/
   .drawer-hamburger-icon,
@@ -816,6 +842,7 @@ a {
   .drawer--right.drawer-open .drawer-navbar .drawer-hamburger a {
     color: black;
     font-size: 24px;
+    display: contents;
   }
 }
 

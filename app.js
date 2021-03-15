@@ -1,7 +1,14 @@
-//burger
-// document.getElementById("navBtn").onclick = function () {
-//   document.querySelector("html").classList.toggle("open");
-// };
+//logo disable
+window.onscroll = function () {
+  let logoI = document.getElementById("logo");
+  let scroll_len = $(window).scrollTop();
+  let bottom_len = $("body").height() - $(window).height();
+  if (scroll_len > 0 && scroll_len < bottom_len - 50) {
+    logoI.style.display = "none";
+  } else {
+    logoI.style.display = "block";
+  }
+};
 
 // webpack.config.js
 var webpack = require("webpack");

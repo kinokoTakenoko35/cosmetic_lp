@@ -28,10 +28,14 @@
     <header class="drawer-navbar drawer-navbar--fixed" role="banner">
       <div class="drawer-container">
         <div class="drawer-navbar-header" style="background-color: transparent">
-          <a class="logo" href="#">
+          <a class="logo" id="logo" href="#">
             <img class="logo-img" src="./images/logo.png" alt="logo" />
           </a>
-          <button type="button" class="drawer-toggle drawer-hamburger">
+          <button
+            type="button"
+            class="drawer-toggle drawer-hamburger"
+            id="Dhamburger"
+          >
             <span class="sr-only">toggle navigation</span>
             <span class="drawer-hamburger-icon"></span>
           </button>
@@ -275,8 +279,13 @@
     <script>
       $(document).ready(function () {
         $(".drawer").drawer();
-        /*toggleメソッドはクラスが存在していれば削除、なければ付与。*/
         $(".drawer-hamburger").on("click", () => {
+          /*ハンバーガーメニュー背景透明化*/
+          document
+            .getElementById("Dhamburger")
+            .classList.toggle("hambuger-open-bk");
+          /*toggleメソッドはクラスが存在していれば削除、なければ付与。*/
+          /*h1フォントカラー変更*/
           document.getElementById("title").classList.toggle("font-color");
         });
         $(".drawer-menu li").on("click", function () {
