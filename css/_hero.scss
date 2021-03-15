@@ -64,13 +64,7 @@
     }
   }
 }
-/*logo hidden*/
-#logo {
-  position: fixed;
-}
-#logo::before {
-  content: "";
-}
+
 .logo-img {
   position: fixed;
   left: 42px;
